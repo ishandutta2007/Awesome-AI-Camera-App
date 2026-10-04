@@ -54,7 +54,7 @@ Below is a detailed breakdown of leading commercial AI camera apps, ranked by es
 
 ## 🔓 Open-Source Projects
 
-Production-ready open-source camera apps, AI avatar generators, webcam filters, and image pipelines, sorted by **GitHub Star Count (Descending)** 🌟:
+Production-ready open-source camera apps, AI avatar generators, webcam filters, and image pipelines, sorted by **GitHub Stars_Count (Descending)** 🌟:
 
 1. **[comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)**  
    [![Stars](https://img.shields.io/github/stars/comfyanonymous/ComfyUI?style=social&color=white)](https://github.com/comfyanonymous/ComfyUI/stargazers)  
