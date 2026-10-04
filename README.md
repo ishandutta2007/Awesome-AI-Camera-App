@@ -233,3 +233,5 @@ Star the repo if you find it useful!
 **Made for mobile photographers, Android power users, Linux enthusiasts, and AI image tool developers.**
 
 Let's make AI camera apps more open, transparent, and privacy-respecting.
+# Awesome-AI-Camera-App
+
