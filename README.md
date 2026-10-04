@@ -1,238 +1,154 @@
-# Awesome AI Camera App
-
-
-
-**Curated List of Commercial Apps & Open-Source Projects**
-
-*Focused on Computational Photography, AI Enhancement, LUT Color Grading & Manual Controls*
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **commercial AI camera apps** and **open-source projects** that bring computational photography, AI-driven enhancement, and professional-grade controls to mobile devices.
-
-
-
-**Examples** include Microsoft Pix, Google Camera, Lensa AI, Prisma, Halide, Focos, Spectre Camera, VSCO, Camera+, and ProCam (the category leaders).
-
-
-
-**Open-source emphasis**: The AI camera app space is **dominated by proprietary apps**, but a **growing open-source ecosystem** is emerging—particularly on Android. **Photon Camera** (Apache-2.0) is the standout, providing advanced LUT support, motion photos, AI-driven bokeh, and multi-frame synthesis . **LutinLens** (Sky Hackathon 2025) combines AI composition suggestions with GPU-accelerated LUT rendering . **Open Camera** remains the classic open-source Android camera with manual controls . **Camataca** offers granular control over every camera parameter Android exposes . For **Linux webcam effects**, **OpenEffects** and **webcam-filters** bring portrait blur and background replacement to any PipeWire-compatible app . This section documents these production-grade solutions.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-
-
-- [Commercial Apps](#commercial-apps)
-
-- [Open-Source Projects](#open-source-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## Commercial Apps
-
-
-
-- **[Halide](https://halide.cam/)**  
-
-  **High-end manual camera app for iPhone.** Provides gesture-based exposure and focus control, focus peaking, detailed histogram, adaptive level grid, and RAW support. The gold standard for iPhone manual photography .
-
-
-
-- **[Google Camera](https://play.google.com/store/apps/details?id=com.google.android.GoogleCamera)**  
-
-  **Google's flagship camera app with computational photography.** Features HDR+, Night Sight, Portrait Mode, and Astrophotography. Pixel-exclusive features leverage Google's ML models for best-in-class image quality.
-
-
-
-- **[Lensa AI](https://prisma-ai.com/lensa)**  
-
-  **AI photo editor with Magic Avatars.** Upload selfies and generate avatars in multiple artistic styles (comic, watercolor, cyberpunk, etc.). Popularized AI avatar generation on mobile .
-
-
-
-- **[Prisma](https://prisma-ai.com/)**  
-
-  **AI art filter app.** Applies artistic styles to photos using neural style transfer. One of the earliest mainstream AI photo apps.
-
-
-
-- **[Focos](https://focos.app/)**  
-
-  **Depth-based bokeh and portrait effects for iPhone.** Uses depth data from dual-camera iPhones to simulate large-aperture bokeh with adjustable focus points.
-
-
-
-- **[Spectre Camera](https://spectre.cam/)**  
-
-  **AI-powered long exposure for iPhone.** Uses computational photography to capture light trails and motion blur without a tripod.
-
-
-
-- **[VSCO](https://vsco.co/)**  
-
-  **Photo editing and community app with film-inspired presets.** Known for its distinctive color grading and LUT-style filters.
-
-
-
-- **[Camera+](https://camera.plus/)**  
-
-  **Feature-rich iPhone camera replacement.** Provides manual controls, multiple shooting modes, and advanced editing tools .
-
-
-
-- **[ProCam](https://procamapp.com/)**  
-
-  **Professional camera app for iPhone.** Offers manual controls, RAW capture, and advanced shooting modes.
-
-
-
-## Open-Source Projects
-
-
-
-### Android Camera Apps with AI
-
-
-
-- **[Photon Camera](https://github.com/bjzhou/PhotonCamera)**  
-
-  **The most advanced open-source Android camera app for static photography.** **Apache-2.0 licensed** . **Key features**: **Full LUT support** (`.cube`, `.png`, `.xmp`) with real-time preview ; **Motion Photos** with multi-vendor adaptation (Xiaomi, Samsung, Pixel)—the only open-source project to do so ; **AI-driven bokeh** using **midas-v2** depth detection optimized for Qualcomm chips ; **Multi-frame synthesis** for noise reduction and super-resolution ; **Phantom Mode** bypasses third-party camera API limitations by using the system camera with LUT processing ; **AI Color Simulation** using Google Nano Banana 2 to extract color profiles from reference photos . **Tech stack**: Jetpack Compose, Camera2 API, Android 11+ . **Best for**: Android photographers wanting mirrorless-like control and AI-enhanced quality.
-
-
-
-- **[LutinLens](https://github.com/m0cal/LutinLens)**  
-
-  **AI-powered smart camera app from Sky Hackathon 2025.** Built on **LibreCamera** with **Flutter** frontend . **Key features**: **NVIDIA NeMo Agent Toolkit + MCP protocol** for real-time AI composition analysis and LUT recommendations ; **GPU-accelerated LUT rendering** via GLSL (YUV to ARGB conversion with trilinear interpolation) achieving ~30 FPS on Snapdragon 8 Gen 2 ; scene recognition, composition suggestions, and real-time feedback (green checkmark for optimal timing) . **Tech stack**: Flutter 3.16+, Dart 3.2+, GLSL shaders, NVIDIA NeMo, Qwen LLM, Alibaba Cloud . **Best for**: Android users wanting AI-assisted composition with professional LUT grading.
-
-
-
-- **[Open Camera](https://opencamera.org.uk/)**  
-
-  **The classic open-source Android camera app.** Free, no ads, no in-app purchases . **Key features**: Auto-stabilization, manual controls (exposure, focus, ISO), HDR, focus modes, time-lapse, customizable resolution and file format . **Tradeoffs**: Complex interface for new users; limited post-processing . **Best for**: Android users wanting a free, feature-rich camera with manual controls and community-driven development.
-
-
-
-- **[Camataca](https://github.com/Particlo/camataca)**  
-
-  **Android camera app that exposes nearly every camera parameter.** **Key features**: Shows all cameras and microphones; supports **HDR, RAW, JPG, PNG, WebP, DNG, AVIF, JXL**; displays all available video/audio encoders (H.264, H.265, VP8/9, AV1); supports **BT2020, Display P3, scRGB, 8/10/16-bit, linear, HLG, PQ**; adjustable resolution, exposure, focus, white balance, sensitivity, FPS, color correction, flash, tonemap, effects . **Tradeoffs**: 1 MB base app (45 MB with AVIF/JXL codecs); requires APK sideload . **Best for**: Power users wanting maximum control over Android camera hardware.
-
-
-
-### Linux Webcam Effects
-
-
-
-- **[OpenEffects](https://github.com/funinkina/openeffects)**  
-
-  **Linux-native webcam effects engine powered by ONNX Runtime.** **Key features**: **Portrait Mode** (AI background blur with feathered edges), **Center Stage** (intelligent face/body tracking for auto-cropping), **Background Replacement** (solid color or custom image), **Studio Light** (face-region-aware tone mapping), **Reactions** (hand-gesture-triggered overlays) . Works with **any PipeWire camera node**—Zoom, OBS, WebRTC, etc. . **Architecture**: `openeffectsd` (headless GStreamer daemon), `openeffects` (GTK4 GUI), `openeffectsctl` (CLI for scripting) . **ML inference runs on CPU** (2-5 ms per frame on modern x86_64) . **Best for**: Linux users wanting AI webcam effects without cloud dependency.
-
-
-
-- **[webcam-filters](https://github.com/jashandeep-sohi/webcam-filters)**  
-
-  **Add filters (background blur, etc.) to your webcam on Linux.** **540 GitHub stars** . Python-based. **Best for**: Simple background blur on Linux without a full effects engine.
-
-
-
-### Image Enhancement & AI Toolkit
-
-
-
-- **[SnapOtter-Vespera](https://github.com/Marcus-torchline/SnapOtter-Vespera)**  
-
-  **Comprehensive open-source image toolkit with 50+ tools.** **AGPLv3 / Commercial dual-license** . **Key features**: **Local AI**—background removal, upscaling, photo restoration and colorization, object erasure, face blur/enhance, OCR, canvas expansion ; **Image editor** with layers, brushes, curves, filters ; **Pipelines** for chaining tools into reusable workflows ; **REST API** for every tool ; supports 55+ input formats including 23 RAW formats . **Deployment**: Single Docker container, no external services . **Best for**: Teams wanting a self-hosted, privacy-first alternative to cloud image services.
-
-
-
-- **[local-upscaler](https://pypi.org/project/local-upscaler/)**  
-
-  **Offline image and video upscaler with additional AI tools.** **Key features**: Image/video upscaling (2x, 4x, 60fps interpolation) ; **Colorize (DDColor)** and **Inpaint/object removal (LaMa)** tabs ; **Non-AI adjustments**—exposure, contrast, highlights/shadows, temperature, tint, vibrance, saturation, B&W conversion ; **Recipes** for batch processing with saved edit chains ; **PDF tools** (build/extract) . **Best for**: Users wanting local AI upscaling and restoration without cloud services.
-
-
-
-### AI Avatar Generation
-
-
-
-- **[302 Avatar Maker](https://github.com/302ai/302_avatar_maker)**  
-
-  **Open-source AI avatar creation from selfies.** **Key features**: 17+ preset artistic styles (comic, watercolor, cyberpunk, steampunk, etc.); custom style descriptions; multiple output sizes (960×1280, 1024×1024, 1280×960) . **Tech stack**: Next.js 14, Tailwind CSS, Shadcn UI . **Deployment**: Docker . **Best for**: Creating unique social media avatars and artistic portraits.
-
-
-
-- **[Enliven](https://huggingface.co/spaces/Coconut626/lyvo-photo-to-videoAi)**  
-
-  **Open-source AI avatar animation with real expression transfer.** **MIT/Apache-2.0 licensed** . **Key features**: Transfers real human expressions and head movements from a driving video onto a static avatar photo; uses **LivePortrait** for expression/pose transfer and optional **GFPGAN** for face enhancement ; natural head rotation, nods, blinks . **Requirements**: Python 3.10+, 8GB RAM minimum, GPU recommended (CPU takes 13-20+ hours per 10-second video) . **Best for**: Creating expressive talking-head avatars from photos.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Android AI Camera**: **Photon Camera** (Apache-2.0, LUTs, AI bokeh, motion photos), **LutinLens** (AI composition, GPU LUTs), **Open Camera** (classic, manual controls), **Camataca** (full parameter control) .
-
-- **Linux Webcam**: **OpenEffects** (ONNX-based, portrait/background), **webcam-filters** (simple blur) .
-
-- **Image Toolkit**: **SnapOtter-Vespera** (50+ tools, local AI), **local-upscaler** (upscaling, colorize, inpaint) .
-
-- **AI Avatars**: **302 Avatar Maker** (17+ styles), **Enliven** (expression transfer) .
-
-
-
-**Frameworks for building custom systems**: Combine **Photon Camera** for Android photography with LUTs and AI bokeh, **OpenEffects** for Linux webcam effects, **SnapOtter-Vespera** for comprehensive local image processing, and **302 Avatar Maker** or **Enliven** for AI avatar generation. Add **ONNX Runtime** for on-device ML inference and **FFmpeg** for video processing.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's commercial or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- AI camera apps handle photos and potentially biometric data (selfies, faces); ensure compliance with privacy regulations and obtain proper consent for face processing.
-
-- **Open-source reality**: The open-source ecosystem for AI camera apps is **developing but production-capable** on **Android** (**Photon Camera**, **Open Camera**, **Camataca**) and **Linux** (**OpenEffects**, **webcam-filters**) . **Photon Camera** provides the most advanced feature set—LUTs, motion photos, AI bokeh, multi-frame synthesis—and is actively maintained . **OpenEffects** brings AI webcam effects to any Linux app . **SnapOtter-Vespera** offers a comprehensive self-hosted image toolkit . However, **commercial apps** (Halide, Google Camera, Lensa) still lead in **computational photography quality** and **AI model sophistication**, particularly for iPhone . The open-source path is **genuinely viable** for Android users and privacy-conscious Linux users seeking full control over their photography workflow.
-
-
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome AI Camera App Banner" width="100%">
+</p>
+
+# 📸 Awesome AI Camera App ✨
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-AI-Camera-App"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-AI-Camera-App?style=social" alt="Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-AI-Camera-App/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-AI-Camera-App?style=social" alt="Forks"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+> **A curated showcase of commercial AI camera apps, computational photography tools, LUT color grading engines, and open-source vision frameworks for iOS, Android, and Linux.** 🚀
 
 ---
 
+## 💡 Overview & Market Insights
 
+The estimated global market size for AI photography & mobile camera applications is **$15.2 Billion**, projected to reach **$38.4 Billion by 2030** (CAGR 14.3%). 
 
-**Made for mobile photographers, Android power users, Linux enthusiasts, and AI image tool developers.**
+📈 **Market Structure**: The sector is **moderately fragmented**, featuring giant tech incumbents (Google, Apple) alongside specialized boutique studio platforms (Lux Optics, Prisma Labs, VSCO). While native OS camera apps dominate default usage, high-end manual controls and niche AI style/avatar generation enable independent SaaS vendors and open-source projects to thrive.
 
-Let's make AI camera apps more open, transparent, and privacy-respecting.
-# Awesome-AI-Camera-App
+---
 
-Awesome AI Camera AppCurated List of Commercial Apps & Open-Source ProjectsFocused on Computational Photography, AI Enhancement, LUT Color Grading & Manual ControlsLast updated: October 2026This repository tracks notable commercial AI camera apps and open-source projects that bring computational photography, AI-driven enhancement, and professional-grade controls to mobile devices.Examples include Microsoft Pix, Google Camera, Lensa AI, Prisma, Halide, Focos, Spectre Camera, VSCO, Camera+, and ProCam (the category leaders).Open-source emphasis: The AI camera app space is dominated by proprietary apps, but a growing open-source ecosystem is emerging—particularly on Android. Photon Camera (Apache-2.0) is the standout, providing advanced LUT support, motion photos, AI-driven bokeh, and multi-frame synthesis . LutinLens (Sky Hackathon 2025) combines AI composition suggestions with GPU-accelerated LUT rendering . Open Camera remains the classic open-source Android camera with manual controls . Camataca offers granular control over every camera parameter Android exposes . For Linux webcam effects, OpenEffects and webcam-filters bring portrait blur and background replacement to any PipeWire-compatible app . This section documents these production-grade solutions.Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.Table of ContentsCommercial AppsOpen-Source ProjectsHow to ContributeDisclaimerCommercial AppsHalideHigh-end manual camera app for iPhone. Provides gesture-based exposure and focus control, focus peaking, detailed histogram, adaptive level grid, and RAW support. The gold standard for iPhone manual photography .Google CameraGoogle's flagship camera app with computational photography. Features HDR+, Night Sight, Portrait Mode, and Astrophotography. Pixel-exclusive features leverage Google's ML models for best-in-class image quality.Lensa AIAI photo editor with Magic Avatars. Upload selfies and generate avatars in multiple artistic styles (comic, watercolor, cyberpunk, etc.). Popularized AI avatar generation on mobile .PrismaAI art filter app. Applies artistic styles to photos using neural style transfer. One of the earliest mainstream AI photo apps.FocosDepth-based bokeh and portrait effects for iPhone. Uses depth data from dual-camera iPhones to simulate large-aperture bokeh with adjustable focus points.Spectre CameraAI-powered long exposure for iPhone. Uses computational photography to capture light trails and motion blur without a tripod.VSCOPhoto editing and community app with film-inspired presets. Known for its distinctive color grading and LUT-style filters.Camera+Feature-rich iPhone camera replacement. Provides manual controls, multiple shooting modes, and advanced editing tools .ProCamProfessional camera app for iPhone. Offers manual controls, RAW capture, and advanced shooting modes.Open-Source ProjectsAndroid Camera Apps with AIPhoton CameraThe most advanced open-source Android camera app for static photography. Apache-2.0 licensed . Key features: Full LUT support (.cube, .png, .xmp) with real-time preview ; Motion Photos with multi-vendor adaptation (Xiaomi, Samsung, Pixel)—the only open-source project to do so ; AI-driven bokeh using midas-v2 depth detection optimized for Qualcomm chips ; Multi-frame synthesis for noise reduction and super-resolution ; Phantom Mode bypasses third-party camera API limitations by using the system camera with LUT processing ; AI Color Simulation using Google Nano Banana 2 to extract color profiles from reference photos . Tech stack: Jetpack Compose, Camera2 API, Android 11+ . Best for: Android photographers wanting mirrorless-like control and AI-enhanced quality.LutinLensAI-powered smart camera app from Sky Hackathon 2025. Built on LibreCamera with Flutter frontend . Key features: NVIDIA NeMo Agent Toolkit + MCP protocol for real-time AI composition analysis and LUT recommendations ; GPU-accelerated LUT rendering via GLSL (YUV to ARGB conversion with trilinear interpolation) achieving ~30 FPS on Snapdragon 8 Gen 2 ; scene recognition, composition suggestions, and real-time feedback (green checkmark for optimal timing) . Tech stack: Flutter 3.16+, Dart 3.2+, GLSL shaders, NVIDIA NeMo, Qwen LLM, Alibaba Cloud . Best for: Android users wanting AI-assisted composition with professional LUT grading.Open CameraThe classic open-source Android camera app. Free, no ads, no in-app purchases . Key features: Auto-stabilization, manual controls (exposure, focus, ISO), HDR, focus modes, time-lapse, customizable resolution and file format . Tradeoffs: Complex interface for new users; limited post-processing . Best for: Android users wanting a free, feature-rich camera with manual controls and community-driven development.CamatacaAndroid camera app that exposes nearly every camera parameter. Key features: Shows all cameras and microphones; supports HDR, RAW, JPG, PNG, WebP, DNG, AVIF, JXL; displays all available video/audio encoders (H.264, H.265, VP8/9, AV1); supports BT2020, Display P3, scRGB, 8/10/16-bit, linear, HLG, PQ; adjustable resolution, exposure, focus, white balance, sensitivity, FPS, color correction, flash, tonemap, effects . Tradeoffs: 1 MB base app (45 MB with AVIF/JXL codecs); requires APK sideload . Best for: Power users wanting maximum control over Android camera hardware.Linux Webcam EffectsOpenEffectsLinux-native webcam effects engine powered by ONNX Runtime. Key features: Portrait Mode (AI background blur with feathered edges), Center Stage (intelligent face/body tracking for auto-cropping), Background Replacement (solid color or custom image), Studio Light (face-region-aware tone mapping), Reactions (hand-gesture-triggered overlays) . Works with any PipeWire camera node—Zoom, OBS, WebRTC, etc. . Architecture: openeffectsd (headless GStreamer daemon), openeffects (GTK4 GUI), openeffectsctl (CLI for scripting) . ML inference runs on CPU (2-5 ms per frame on modern x86_64) . Best for: Linux users wanting AI webcam effects without cloud dependency.webcam-filtersAdd filters (background blur, etc.) to your webcam on Linux. 540 GitHub stars . Python-based. Best for: Simple background blur on Linux without a full effects engine.Image Enhancement & AI ToolkitSnapOtter-VesperaComprehensive open-source image toolkit with 50+ tools. AGPLv3 / Commercial dual-license . Key features: Local AI—background removal, upscaling, photo restoration and colorization, object erasure, face blur/enhance, OCR, canvas expansion ; Image editor with layers, brushes, curves, filters ; Pipelines for chaining tools into reusable workflows ; REST API for every tool ; supports 55+ input formats including 23 RAW formats . Deployment: Single Docker container, no external services . Best for: Teams wanting a self-hosted, privacy-first alternative to cloud image services.local-upscalerOffline image and video upscaler with additional AI tools. Key features: Image/video upscaling (2x, 4x, 60fps interpolation) ; Colorize (DDColor) and Inpaint/object removal (LaMa) tabs ; Non-AI adjustments—exposure, contrast, highlights/shadows, temperature, tint, vibrance, saturation, B&W conversion ; Recipes for batch processing with saved edit chains ; PDF tools (build/extract) . Best for: Users wanting local AI upscaling and restoration without cloud services.AI Avatar Generation302 Avatar MakerOpen-source AI avatar creation from selfies. Key features: 17+ preset artistic styles (comic, watercolor, cyberpunk, steampunk, etc.); custom style descriptions; multiple output sizes (960×1280, 1024×1024, 1280×960) . Tech stack: Next.js 14, Tailwind CSS, Shadcn UI . Deployment: Docker . Best for: Creating unique social media avatars and artistic portraits.EnlivenOpen-source AI avatar animation with real expression transfer. MIT/Apache-2.0 licensed . Key features: Transfers real human expressions and head movements from a driving video onto a static avatar photo; uses LivePortrait for expression/pose transfer and optional GFPGAN for face enhancement ; natural head rotation, nods, blinks . Requirements: Python 3.10+, 8GB RAM minimum, GPU recommended (CPU takes 13-20+ hours per 10-second video) . Best for: Creating expressive talking-head avatars from photos.Additional Strong Open-Source OptionsAndroid AI Camera: Photon Camera (Apache-2.0, LUTs, AI bokeh, motion photos), LutinLens (AI composition, GPU LUTs), Open Camera (classic, manual controls), Camataca (full parameter control) .Linux Webcam: OpenEffects (ONNX-based, portrait/background), webcam-filters (simple blur) .Image Toolkit: SnapOtter-Vespera (50+ tools, local AI), local-upscaler (upscaling, colorize, inpaint) .AI Avatars: 302 Avatar Maker (17+ styles), Enliven (expression transfer) .Frameworks for building custom systems: Combine Photon Camera for Android photography with LUTs and AI bokeh, OpenEffects for Linux webcam effects, SnapOtter-Vespera for comprehensive local image processing, and 302 Avatar Maker or Enliven for AI avatar generation. Add ONNX Runtime for on-device ML inference and FFmpeg for video processing.How to ContributeFork the repo.Add/edit entries in README.md (follow existing format).Include: name, link, 1–2 sentence description, and whether it's commercial or open-source.Submit PR with a short explanation.Star the repo if you find it useful!DisclaimerThis is a community-curated list — not exhaustive and not an endorsement.AI camera apps handle photos and potentially biometric data (selfies, faces); ensure compliance with privacy regulations and obtain proper consent for face processing.Open-source reality: The open-source ecosystem for AI camera apps is developing but production-capable on Android (Photon Camera, Open Camera, Camataca) and Linux (OpenEffects, webcam-filters) . Photon Camera provides the most advanced feature set—LUTs, motion photos, AI bokeh, multi-frame synthesis—and is actively maintained . OpenEffects brings AI webcam effects to any Linux app . SnapOtter-Vespera offers a comprehensive self-hosted image toolkit . However, commercial apps (Halide, Google Camera, Lensa) still lead in computational photography quality and AI model sophistication, particularly for iPhone . The open-source path is genuinely viable for Android users and privacy-conscious Linux users seeking full control over their photography workflow.Made for mobile photographers, Android power users, Linux enthusiasts, and AI image tool developers.Let's make AI camera apps more open, transparent, and privacy-respecting.
+## 📂 Table of Contents
+
+- [💼 Commercial & SaaS Camera Apps](#-commercial--saas-camera-apps)
+- [🔓 Open-Source Projects](#-open-source-projects)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [📈 Star History](#-star-history)
+- [⚠️ Disclaimer](#%EF%B8%8F-disclaimer)
+
+---
+
+## 💼 Commercial & SaaS Camera Apps
+
+Below is a detailed breakdown of leading commercial AI camera apps, ranked by estimated company size, valuation, and revenue metrics:
+
+| App Name 📱 | Primary Focus & Features 🎯 | Pricing Tier 💳 | Free Tier / Trial Limits ⏳ | Company Valuation / Revenue Size 📊 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Google Camera](https://play.google.com/store/apps/details?id=com.google.android.GoogleCamera)** | Flagship computational photography (HDR+, Night Sight, Astrophotography, Magic Eraser) | Free pre-installed on Google Pixel hardware | Unlimited free access on supported Pixel devices | **$2.15 Trillion** Market Cap (Alphabet Inc.) |
+| **[Lensa AI](https://prisma-ai.com/lensa)** | AI photo editing, retouching, and Magic Avatar generation | $4.99/week or $29.99/year subscription | 7-day free trial (limits avatar downloads without credits) | **$100M+** ARR Peak (Prisma Labs) |
+| **[VSCO](https://vsco.co/)** | Professional film emulation presets, LUT color grading, and creator community | $29.99/year VSCO Plus membership | Free basic version with limited film presets & basic edit tools | **$550M** Valuation ($35M+ ARR) |
+| **[Prisma](https://prisma-ai.com/)** | Neural style transfer AI filters transforming photos into artwork | $7.99/month or $29.99/year subscription | Free tier available (SD exports, limited filter catalog) | **$100M+** Valuation (Prisma Labs) |
+| **[Focos](https://focos.app/)** | Computational portrait depth map editing, large aperture bokeh simulation | $3.99/month, $12.99/year, or $39.99 lifetime | Free download with basic focus adjustment (Pro features locked) | **$15M+** Estimated Valuation (Antechinus/Appsys) |
+| **[Camera+](https://camera.plus/)** | Manual exposure/ISO controls, RAW capture, depth shooting, and macro mode | $4.99/month or $19.99/year subscription | 7-day free trial with full feature access | **$10M+** Total Revenue (LateNiteSoft) |
+| **[Halide](https://halide.cam/)** | Premium manual camera for iPhone with RAW/ProRAW, focus peaking, & Process Zero | $2.99/month, $19.99/year, or $69.99 lifetime | 7-day free trial (requires annual membership sign-up) | **$10M+** Valuation (Lux Optics, target of Apple acquisition talks) |
+| **[Spectre Camera](https://spectre.cam/)** | AI-driven long exposure capture, light trails, and background crowd removal | $4.99 one-time upfront purchase | No free tier or trial (Paid app only) | **$5M+** Estimated Revenue (Lux Optics) |
+| **[ProCam](https://procamapp.com/)** | Professional camera replacement with 4K video, time-lapse, and manual shooting | $9.99 one-time purchase + optional add-on packs | No free tier (Paid app download) | **$5M+** Estimated Revenue (Samer Azzam) |
+
+---
+
+## 🔓 Open-Source Projects
+
+Production-ready open-source camera apps, AI avatar generators, webcam filters, and image pipelines, sorted by **GitHub Star Count (Descending)** 🌟:
+
+1. **[comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)**  
+   [![Stars](https://img.shields.io/github/stars/comfyanonymous/ComfyUI?style=social&color=white)](https://github.com/comfyanonymous/ComfyUI/stargazers)  
+   **Modular node-based GUI for AI image/video generation.** Advanced visual graph pipeline editor for Stable Diffusion, FLUX, and real-time AI camera workflows.
+
+2. **[KwaiVGI/LivePortrait](https://github.com/KwaiVGI/LivePortrait)**  
+   [![Stars](https://img.shields.io/github/stars/KwaiVGI/LivePortrait?style=social&color=white)](https://github.com/KwaiVGI/LivePortrait/stargazers)  
+   **Efficient portrait animation with stitchable and controllable motion.** Real-time expression transfer from driving video onto static avatar photos.
+
+3. **[scikit-image/scikit-image](https://github.com/scikit-image/scikit-image)**  
+   [![Stars](https://img.shields.io/github/stars/scikit-image/scikit-image?style=social&color=white)](https://github.com/scikit-image/scikit-image/stargazers)  
+   **Image processing library in Python.** Foundational open-source algorithms for filtering, edge detection, color transformation, and feature extraction.
+
+4. **[android/camera-samples](https://github.com/android/camera-samples)**  
+   [![Stars](https://img.shields.io/github/stars/android/camera-samples?style=social&color=white)](https://github.com/android/camera-samples/stargazers)  
+   **Official Google Android Camera2 and CameraX samples.** Essential reference implementations for building modern high-performance camera applications.
+
+5. **[wuhaoyu1990/MagicCamera](https://github.com/wuhaoyu1990/MagicCamera)**  
+   [![Stars](https://img.shields.io/github/stars/wuhaoyu1990/MagicCamera?style=social&color=white)](https://github.com/wuhaoyu1990/MagicCamera/stargazers)  
+   **Real-time GPU-accelerated filter camera for Android.** Features real-time filter previews, video recording, image editing, and custom shading.
+
+6. **[resemble-ai/Resemble-Enhance](https://github.com/resemble-ai/Resemble-Enhance)**  
+   [![Stars](https://img.shields.io/github/stars/resemble-ai/Resemble-Enhance?style=social&color=white)](https://github.com/resemble-ai/Resemble-Enhance/stargazers)  
+   **AI speech enhancement and noise reduction engine.** Complements AI video/camera applications with studio-grade audio restoration.
+
+7. **[jashandeep-sohi/webcam-filters](https://github.com/jashandeep-sohi/webcam-filters)**  
+   [![Stars](https://img.shields.io/github/stars/jashandeep-sohi/webcam-filters?style=social&color=white)](https://github.com/jashandeep-sohi/webcam-filters/stargazers)  
+   **Background blur and virtual video filters for Linux webcams.** Lightweight Python application connecting camera streams with OpenCV filters.
+
+8. **[bjzhou/PhotonCamera](https://github.com/bjzhou/PhotonCamera)**  
+   [![Stars](https://img.shields.io/github/stars/bjzhou/PhotonCamera?style=social&color=white)](https://github.com/bjzhou/PhotonCamera/stargazers)  
+   **Advanced open-source Android camera app for static photography.** Features 3D LUT support (`.cube`, `.png`), MiDaS v2 AI bokeh, motion photos, and multi-frame noise reduction.
+
+9. **[funinkina/openeffects](https://github.com/funinkina/openeffects)**  
+   [![Stars](https://img.shields.io/github/stars/funinkina/openeffects?style=social&color=white)](https://github.com/funinkina/openeffects/stargazers)  
+   **ONNX-powered Linux webcam effects engine.** Delivers portrait background blur, auto-framing, studio light adjustment, and gesture reactions for PipeWire streams.
+
+10. **[302ai/302_avatar_maker](https://github.com/302ai/302_avatar_maker)**  
+    [![Stars](https://img.shields.io/github/stars/302ai/302_avatar_maker?style=social&color=white)](https://github.com/302ai/302_avatar_maker/stargazers)  
+    **AI avatar generator web application.** Converts portrait photos into 17+ artistic styles using Next.js 14 and open diffusion models.
+
+11. **[Particlo/camataca](https://github.com/Particlo/camataca)**  
+    [![Stars](https://img.shields.io/github/stars/Particlo/camataca?style=social&color=white)](https://github.com/Particlo/camataca/stargazers)  
+    **Full-parameter Android camera control app.** Provides raw low-level camera parameter access, multi-camera switching, BT2020 color spaces, and AVIF/JXL export.
+
+12. **[m0cal/LutinLens](https://github.com/m0cal/LutinLens)**  
+    [![Stars](https://img.shields.io/github/stars/m0cal/LutinLens?style=social&color=white)](https://github.com/m0cal/LutinLens/stargazers)  
+    **AI composition guide and GPU LUT renderer.** Built with Flutter, GLSL shaders, and NVIDIA NeMo agent protocols for smart scene feedback.
+
+13. **[Marcus-torchline/SnapOtter-Vespera](https://github.com/Marcus-torchline/SnapOtter-Vespera)**  
+    [![Stars](https://img.shields.io/github/stars/Marcus-torchline/SnapOtter-Vespera?style=social&color=white)](https://github.com/Marcus-torchline/SnapOtter-Vespera/stargazers)  
+    **Self-hosted image toolkit with 50+ local AI microservices.** Docker-based suite for background removal, upscaling, restoration, and REST API automation.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are always welcome! 🛠️
+
+1. **Fork** the repository 🍴
+2. **Create** a new feature branch (`git checkout -b feature/amazing-camera-app`)
+3. **Add/Update** your entry in `README.md` following the table or list format.
+4. **Commit** your changes (`git commit -m 'Add Amazing AI Camera App'`)
+5. **Push** to the branch (`git push origin feature/amazing-camera-app`)
+6. **Open** a Pull Request 🚀
+
+---
+
+## 💖 Support & Sponsorship
+
+If you found this curated list helpful for your mobile photography setup, AI development, or research, please consider supporting the project! ⭐
+
+- **Star** this repository to show your appreciation! 🌟
+- **Fork** and share it with your fellow developers and creators! 📢
+- **Sponsor**: Buy me a coffee or support ongoing maintenance via [GitHub Sponsors](https://github.com/sponsors/ishandutta2007). ☕
+
+Your support keeps this repository updated and maintained. Thank you! 🙏
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-AI-Camera-App&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-AI-Camera-App&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer
+
+- This is a **community-curated** repository provided for educational and informational purposes only.
+- AI camera applications process media and potential biometric data (face structures, selfies); ensure compliance with local privacy regulations (GDPR, CCPA) before processing sensitive image data.
+- All product names, logos, and brands are property of their respective owners.
+
+---
+
+<p align="center">
+  <b>Made with ❤️ for mobile photographers, Android power users, Linux enthusiasts, and AI vision engineers.</b>
+</p>
